@@ -1,0 +1,228 @@
+@import 'mixins';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+// Reset and base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+}
+
+.product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &.featured {
+        background-color: #ffffff;
+        color: #fc0000;
+    }
+}
+
+.price-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+.product-price {
+    color: #888888;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+
+    &.home-app {
+        background: linear-gradient(135deg, #007AFF, #0051D5);
+        &::before {
+            content: "H";
+        }
+    }
+
+    &.smart-clean {
+        background: linear-gradient(135deg, #FF6B35, #F7931E);
+        &::before {
+            content: "S";
+        }
+    }
+
+    &.style-sync {
+        background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+        &::before {
+            content: "S";
+        }
+    }
+
+    &.media-hub {
+        background: linear-gradient(135deg, #00B894, #00CEC9);
+        &::before {
+            content: "M";
+        }
+    }
+   &.cool-sync {
+        background: linear-gradient(135deg, #00B894, #00CEC9);
+        &::before {
+            content: "C";
+        }
+    }   &.fit-track {
+        background: linear-gradient(135deg, #00B894, #0e0f0f);
+        &::before {
+            content: "F";
+        }
+    }
+    &.closet-app {
+        background: linear-gradient(135deg, #E84393, #FD79A8);
+        &::before {
+            content: "C";
+        }
+    }
+
+    &.brew-control {
+        background: linear-gradient(135deg, #FDCB6E, #E17055);
+        &::before {
+            content: "B";
+        }
+    }
+}
+
+.brand-name {
+    font-size: 0.875rem;
+    color: #cccccc;
+    font-weight: 500;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .product-info {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+}
